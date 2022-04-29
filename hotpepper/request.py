@@ -12,6 +12,7 @@ URL = "https://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key=0cdb9c0f1340ed
 def request_hotpepper():
     response = requests.get(URL).text
     jsons = json.loads(response)
+    
 
     jsonify = ({
         "data": []
