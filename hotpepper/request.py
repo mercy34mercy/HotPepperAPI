@@ -13,7 +13,6 @@ def request_hotpepper():
     response = requests.get(URL).text
     jsons = json.loads(response)
     
-
     jsonify = ({
         "data": []
     })
