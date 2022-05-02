@@ -6,4 +6,4 @@ app = Flask(__name__)
 @app.route('/', methods=['POST', 'GET'])
 def index():
     data = request_hotpepper()
-    return str(data)
+    return data
