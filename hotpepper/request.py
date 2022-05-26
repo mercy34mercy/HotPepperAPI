@@ -1,5 +1,6 @@
 import json
 from urllib import response
+from databasefiles.insert import insertres
 from flask import jsonify
 import requests
 
@@ -19,16 +20,19 @@ def request_hotpepper():
 
     datas = jsons["results"]["shop"]
     for data in datas:
-        print(data["name"])
-        add_data = ({
-            "name":data["name"],
-            "photo":data["photo"]["mobile"]["l"],
-            "logo": data["logo_image"]
-        })
-        jsonify["data"].append(add_data)
+        # print(data["name"])
+        a = insertres(data["name"])
+        if(a == "err"):
+            print("err")
+        else:
+            add_data = ({
+                "name":data["name"],
+                "resid":a,
+                "photo":data["photo"]["mobile"]["l"],
+                "logo": data["logo_image"]
+            })
+            jsonify["data"].append(add_data)
     return jsonify
-
-request_hotpepper()
 
 # access
 # address
