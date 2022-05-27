@@ -1,5 +1,7 @@
 from crypt import methods
 from flask import Flask
+from flask import request
+from databasefiles.inserttime import insertime
 from hotpepper.request import request_hotpepper
 
 app = Flask(__name__)
@@ -11,6 +13,7 @@ def index():
 
 @app.route('/time',methods=['POST'])
 def time():
-    
-    return 0
+    json_data = request.json
+    response = insertime(json_data["resid"],json_data["time"])
+    return response
 
