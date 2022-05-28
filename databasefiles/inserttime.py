@@ -10,6 +10,6 @@ def insertime(resid,time):
     try:
         cur.execute("insert into love (resid,time) VALUES('%s','%s')" %(resid,time))
     except:
-        return 1
+        return "1"
     
-    return 0
+    return "0"
