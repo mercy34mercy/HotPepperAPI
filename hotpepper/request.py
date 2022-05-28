@@ -27,7 +27,7 @@ def request_hotpepper():
         else:
             add_data = ({
                 "name":data["name"],
-                "resid":a,
+                "id":a,
                 "photo":data["photo"]["mobile"]["l"],
                 "logo": data["logo_image"]
             })
