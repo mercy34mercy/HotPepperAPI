@@ -21,5 +21,5 @@ def time():
 @app.route('/admin',methods=['GET'])
 def admin():
     response = alltime()
-    return response
+    return str(response)
 
